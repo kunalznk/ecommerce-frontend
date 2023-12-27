@@ -1,6 +1,9 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import EditProfile from "./pages/EditProfile";
 
 function App() {
   return (
