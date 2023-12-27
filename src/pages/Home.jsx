@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { Button } from "@material-tailwind/react";
 import { Typography } from "@material-tailwind/react";
+import BrowseCategory from "../components/BrowseCategory";
+import BestSelling from "../components/BestSelling";
+import CategoryOffer from "../components/CategoryOffer";
+import NewArrival from "../components/NewArrival";
 
 const Home = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="w-full h-full flex justify-center items-center gap-40 py-3">
-      <Typography variant="h2">Count value is {count}</Typography>
+    <div className="flex flex-col  gap-6">
+      {/* <Typography variant="h2">Count value is {count}</Typography>
       <Button
         onClick={() => {
           setCount(count + 1);
@@ -16,7 +20,11 @@ const Home = () => {
       >
         {" "}
         Add 1{" "}
-      </Button>
+      </Button> */}
+      <BrowseCategory />
+      <BestSelling />
+      <CategoryOffer />
+      <NewArrival />
     </div>
   );
 };
