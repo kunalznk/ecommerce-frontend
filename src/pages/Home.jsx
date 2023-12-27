@@ -6,7 +6,7 @@ const Home = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="flex justify-between items-end gap-2 py-3">
+    <div className="w-full h-full flex justify-center items-center gap-40 py-3">
       <Typography variant="h2">Count value is {count}</Typography>
       <Button
         onClick={() => {
