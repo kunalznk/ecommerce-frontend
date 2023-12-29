@@ -5,8 +5,28 @@ import {
   ArrowLeftIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const BrowseCategory = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    async function fetchCategories() {
+      try {
+        const apiUrl = "https://fakestoreapi.com/products/categories";
+        const resp = await axios.get(apiUrl);
+        setCategories(resp.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    if (categories.length === 0) {
+      fetchCategories();
+    }
+  }, [categories]);
+
+  console.log(categories);
   return (
     <>
       <div className="flex flex-col gap-5 mb-8">
@@ -27,9 +47,10 @@ const BrowseCategory = () => {
         </div>
       </div>
       <div className="flex gap-8">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map(() => (
-          <CategoryCard Icon={DevicePhoneMobileIcon} label={"Phones"} />
-        ))}
+        {categories.length > 0 &&
+          categories.map((category) => (
+            <CategoryCard Icon={DevicePhoneMobileIcon} label={category} />
+          ))}
       </div>
       <div className="py-3">
         <hr className="mt-3" />
