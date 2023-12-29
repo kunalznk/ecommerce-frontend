@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
-    .mark {
-        border: 2px solid red
-    }
+  .mark {
+    border: 2px solid red;
+  }
 }
