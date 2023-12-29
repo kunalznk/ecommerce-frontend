@@ -5,6 +5,7 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import { HeartIcon as FHeartIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,7 +13,10 @@ const Header = () => {
       <Typography className="text-2xl font-bold">Exclusive</Typography>
       <div className="flex justify-center items-center gap-12">
         {["Home", "Contact", "About", "Sign Up"].map((label) => (
-          <Typography className="text-base font-base">{label}</Typography>
+          <Link to={"register"}>
+            {" "}
+            <Typography className="text-base font-base">{label}</Typography>
+          </Link>
         ))}
       </div>
       <div className="flex justify-center items-center gap-6">
